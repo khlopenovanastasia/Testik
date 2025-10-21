@@ -12,12 +12,14 @@ class Buildings {
 public:
     long long earnings_ = 0;
     int progress_ = months_;
+    int id_;
 
     Buildings() {
         type_ = "Will be later";
         price_ = 0;
         months_ = 0;
         flats_ = 0;
+        id_ = rand() % 1000;
     };
     virtual ~Buildings() = default;
 
@@ -50,7 +52,6 @@ protected:
     long long price_;
     int months_;
     int flats_;
-
 };
 
 class Panel : public Buildings {
@@ -88,11 +89,13 @@ class Supermarket {
 public:
     long long earnings_ = 0;
     int progress_ = months_;
+    int id_;
 
     Supermarket() {
         name_ = "Will be later";
         price_ = 2500000;
         months_ = 5;
+        id_ = rand() % 1000;
     }
 
     virtual ~Supermarket() = default;
@@ -121,4 +124,10 @@ protected:
     string name_;
     long long price_;
     int months_;
+};
+
+class NewProject {
+public:
+
+
 };

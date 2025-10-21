@@ -3,16 +3,13 @@
 
 int main()
 {
-    Supermarket first;
-    first.progress_ = 1;
-    first.UpdateConstructionProgress();
-    for (int i = 0; i < supermarket_completed.size(); i++)
-    {
-        cout << supermarket_completed[i]->GetPrice();
-    }
-    //cout << first.GetName() << endl;
-    cout << first.GetPrice() << endl;
-    cout << first.GetPeriod() << endl;
-    cout << first.earnings_ << endl;
-    //cout << first.GetFlats() << endl;
+    CreateNewBuilding(2);
+	for (int i = 0; i < 10; i++)
+	{
+		CreateNewBuilding(i%3 + 1);
+	}
+	for (auto i : IdBuildings)
+	{
+		cout << GetIdBuilding(i.first) << " " << i.second << endl;
+	}
 }

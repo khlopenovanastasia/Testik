@@ -1,5 +1,11 @@
 #include "headers.h"
 
+map<Buildings*, int> IdBuildings;
+
+int GetIdBuilding(Buildings* building){
+	return IdBuildings[building];
+}
+
 // спрос на жильё
 double GetHouseDemand(int month) {
 	month %= 12;
@@ -38,4 +44,29 @@ double GetSupermarketSales(int month) {
 	else {
 		return 1.2;
 	}
+}
+
+Buildings* CreateNewBuilding(int chose) { // в парметрах тип дома 1 - панель, 2 - монол, 3 - кирпичный
+	//также в параметрах можно указывать id игрока
+	Buildings* NewBuilding = nullptr;
+
+	switch (chose)
+	{
+	case 1:
+		NewBuilding = new Panel();
+		IdBuildings[NewBuilding] = NewBuilding->id_;
+		break;
+	case 2:
+		NewBuilding = new Mono;
+		IdBuildings[NewBuilding] = NewBuilding->id_;
+		break;
+	case 3:
+		NewBuilding = new Brick;
+		IdBuildings[NewBuilding] = NewBuilding->id_;
+		break;
+
+	default:
+		break;
+	}
+	return NewBuilding;
 }
