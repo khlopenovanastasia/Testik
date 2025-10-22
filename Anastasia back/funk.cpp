@@ -6,7 +6,7 @@ int GetIdBuilding(Buildings* building){
 	return IdBuildings[building];
 }
 
-// спрос на жильё
+// спрос на жильё в зависимости от сезона
 double GetHouseDemand(int month) {
 	month %= 12;
 	//1-Jan 2-Feb 3-Mar 4-Apr 5-May 6-Jun 7-Jul 8-Aug 9-Sep 10-Okt 11-Nov 0-Dec
@@ -26,7 +26,7 @@ double GetHouseDemand(int month) {
 	}
 }
 
-//коэфициент продаж в суппермаркете
+//коэфициент продаж в супермаркете
 double GetSupermarketSales(int month) {
 	month %= 12;
 	//1-Jan 2-Feb 3-Mar 4-Apr 5-May 6-Jun 7-Jul 8-Aug 9-Sep 10-Okt 11-Nov 0-Dec
@@ -70,3 +70,12 @@ Buildings* CreateNewBuilding(int chose) { // в парметрах тип дома 1 - панель, 2 
 	}
 	return NewBuilding;
 }
+
+Supermarket* CreateNewSupermarket() {
+	Supermarket* NewSupermarket = nullptr;
+	return NewSupermarket;
+}
+
+//функция для расчета прибыли всех супермаркетов
+
+//функция для обновления прогресса во всех супермаркетах
