@@ -1,12 +1,9 @@
 #include "headers.h"
 
 map<Buildings*, int> IdBuildings;
+map<Buildings*, int> IdBuildings;
 
-int GetIdBuilding(Buildings* building){
-	return IdBuildings[building];
-}
-
-// спрос на жильё
+// спрос на жильё в зависимости от сезона
 double GetHouseDemand(int month) {
 	month %= 12;
 	//1-Jan 2-Feb 3-Mar 4-Apr 5-May 6-Jun 7-Jul 8-Aug 9-Sep 10-Okt 11-Nov 0-Dec
@@ -15,6 +12,8 @@ double GetHouseDemand(int month) {
 	{
 		return 0.8;
 	}
+
+
 	else if (month > 2 and month < 6) {
 		return 1.1;
 	}
@@ -26,7 +25,7 @@ double GetHouseDemand(int month) {
 	}
 }
 
-//коэфициент продаж в суппермаркете
+//коэфициент продаж в супермаркете
 double GetSupermarketSales(int month) {
 	month %= 12;
 	//1-Jan 2-Feb 3-Mar 4-Apr 5-May 6-Jun 7-Jul 8-Aug 9-Sep 10-Okt 11-Nov 0-Dec
@@ -69,4 +68,48 @@ Buildings* CreateNewBuilding(int chose) { // в парметрах тип дома 1 - панель, 2 
 		break;
 	}
 	return NewBuilding;
+}
+
+Supermarket* CreateNewSupermarket() {
+	Supermarket* NewSupermarket = new Supermarket();
+	return NewSupermarket;
+}
+
+//функция для расчета прибыли всех супермаркетов, мапа с указателем на магазин и его прибыли 
+map<Supermarket*, long long> CalculateAllSupermarketProfits(vector<Supermarket*>& supermarkets, int current_month, int total_houses) {
+	map<Supermarket*, long long> profits;
+	for (auto* supermarket : supermarkets) {
+		if (supermarket->progress_ == 0) { //построенные супермаркеты
+			long long profit = supermarket->SupermarketMonthlyProfit(current_month, total_houses);
+			profits[supermarket] = profit;
+		}
+	}
+	return profits;
+}
+
+//функция для обновления прогресса во всех супермаркетах
+void UpdateAllSupermarkets(vector<Supermarket*>& supermarkets) {
+	for (auto* supermarket : supermarkets) {
+		supermarket->UpdateConstructionProgress();
+	}
+}
+
+int CountTotalHouses(vector<Buildings*>& all_buildings) {
+	int total = 0;
+	for (auto* building : all_buildings) {
+		if (building->progress_ == 0) { //построенные дома
+			total++;
+		}
+	}
+	return total;
+}
+
+int CountTotalSupermarkets(vector<Supermarket*>& all_supermarkets) {
+	int total = 0;
+	for (auto* supermarket : all_supermarkets) {
+		if (supermarket->progress_ == 0) { //построенные супермаркеты
+			total++;
+		}
+	}
+	return total;
 }
