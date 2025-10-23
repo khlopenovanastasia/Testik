@@ -187,6 +187,10 @@ if exist "$(SolutionDir)dependencies" (
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Anastasia back\Anastasia back.cpp" />
+    <ClCompile Include="..\..\Anastasia back\funk.cpp" />
+    <ClCompile Include="..\..\Anastasia back\oop.cpp" />
+    <ClCompile Include="..\..\Elina back\Elina back.cpp" />
     <ClCompile Include="imgui\imgui-SFML.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_draw.cpp" />
@@ -196,6 +200,7 @@ if exist "$(SolutionDir)dependencies" (
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Anastasia back\headers.h" />
     <ClInclude Include="imgui\imconfig-SFML.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui-SFML.h" />
