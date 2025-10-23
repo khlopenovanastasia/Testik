@@ -1,0 +1,39 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>SFML-ImGUI</Name>
+    <Description>SFML and Dear ImGui Template for Visual Studio: Simple setup for interactive applications.</Description>
+    <ProjectType>VC</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>SFML-ImGUI</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="SFML-ImGUI.vcxproj" File="SFML-ImGUI.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="false" TargetFileName="$projectname$.vcxproj.filters">SFML-ImGUI.vcxproj.filters</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui-SFML.cpp">IMGUI\imgui-SFML.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui.cpp">IMGUI\imgui.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_draw.cpp">IMGUI\imgui_draw.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_stdlib.cpp">IMGUI\imgui_stdlib.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_tables.cpp">IMGUI\imgui_tables.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_widgets.cpp">IMGUI\imgui_widgets.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imconfig-SFML.h">IMGUI\imconfig-SFML.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imconfig.h">IMGUI\imconfig.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui-SFML.h">IMGUI\imgui-SFML.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui-SFML_export.h">IMGUI\imgui-SFML_export.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui.h">IMGUI\imgui.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_internal.h">IMGUI\imgui_internal.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imgui_stdlib.h">IMGUI\imgui_stdlib.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imstb_rectpack.h">IMGUI\imstb_rectpack.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imstb_textedit.h">IMGUI\imstb_textedit.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="imstb_truetype.h">IMGUI\imstb_truetype.h</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="main.cpp">main.cpp</ProjectItem>
+		<ProjectItem ReplaceParameters="false" TargetFileName="resources.zip">resources.zip</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
